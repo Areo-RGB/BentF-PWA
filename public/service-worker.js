@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bentf-v4';
+const CACHE_NAME = 'bentf-v5';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -23,7 +23,7 @@ const urlsToCache = [
   '/assets/icons/ios/120.png',
   '/assets/icons/ios/114.png',
   '/assets/icons/ios/100.png',
-  'https://cdn.tailwindcss.com'
+  '/src/input.css'
 ];
 
 self.addEventListener('install', (event) => {
