@@ -7,6 +7,10 @@ const urlsToCache = [
   'https://video-idea.fra1.cdn.digitaloceanspaces.com/sounds/pro-only.gif',
   '/assets/icons/android/android-launchericon-192-192.png',
   '/assets/icons/android/android-launchericon-512-512.png',
+  '/assets/icons/ios/180.png',
+  '/assets/icons/ios/167.png',
+  '/assets/icons/ios/152.png',
+  '/assets/icons/ios/120.png',
   'https://cdn.tailwindcss.com'
 ];
 
