@@ -27,11 +27,11 @@ const LevelSelection: React.FC<LevelSelectionProps> = ({ onSelectLevel, onSelect
         onClick={onSelectProLevel}
         className="flex-1 flex flex-col items-center justify-center bg-gray-900 text-gray-400 hover:bg-gray-800 hover:text-white transition-all duration-300"
       >
-        <span className="text-4xl md:text-6xl font-bold uppercase tracking-widest">
+        <span className="text-4xl md:text-6xl font-bold uppercase tracking-widest line-through">
           Level 4
         </span>
         <span className="text-lg opacity-75 mt-2">
-          (Zugang verweigert)
+          (Nicht Antippen!)
         </span>
       </button>
     </div>
