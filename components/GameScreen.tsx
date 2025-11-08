@@ -8,7 +8,7 @@ interface GameScreenProps {
   onRestart: () => void;
 }
 
-const notificationSound = new Audio('https://video-idea.fra1.cdn.digitaloceanspaces.com/sounds/beep-short.mp3');
+const notificationSound = new Audio('/assets/audio/beep-short.mp3');
 
 const getRandomColor = (currentColor: string | null): string => {
   let newColor;

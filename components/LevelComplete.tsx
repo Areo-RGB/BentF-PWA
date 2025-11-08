@@ -7,7 +7,7 @@ interface LevelCompleteProps {
   onRestart: () => void;
 }
 
-const victorySound = new Audio('https://video-idea.fra1.cdn.digitaloceanspaces.com/sounds/victory-96688.mp3');
+const victorySound = new Audio('/assets/audio/victory.mp3');
 
 const LevelComplete: React.FC<LevelCompleteProps> = ({ level, onRestart }) => {
   useEffect(() => {

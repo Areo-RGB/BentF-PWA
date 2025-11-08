@@ -1,10 +1,10 @@
-const CACHE_NAME = 'bentf-v2';
+const CACHE_NAME = 'bentf-v4';
 const urlsToCache = [
   '/',
   '/index.html',
-  'https://video-idea.fra1.cdn.digitaloceanspaces.com/sounds/victory-96688.mp3',
-  'https://video-idea.fra1.cdn.digitaloceanspaces.com/sounds/beep-short.mp3',
-  'https://video-idea.fra1.cdn.digitaloceanspaces.com/sounds/pro-only.gif',
+  '/assets/audio/victory.mp3',
+  '/assets/audio/beep-short.mp3',
+  '/assets/audio/pro-only.gif',
   '/assets/icons/android/android-launchericon-192-192.png',
   '/assets/icons/android/android-launchericon-512-512.png',
   '/assets/icons/android/android-launchericon-144-144.png',

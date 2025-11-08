@@ -8,7 +8,7 @@ const ProOnlyScreen: React.FC<ProOnlyScreenProps> = ({ onClose }) => {
   return (
     <div
       className="h-screen w-screen cursor-pointer flex items-center justify-center bg-contain bg-center bg-no-repeat bg-black"
-      style={{ backgroundImage: "url('https://video-idea.fra1.cdn.digitaloceanspaces.com/sounds/pro-only.gif')" }}
+      style={{ backgroundImage: "url('/assets/audio/pro-only.gif')" }}
       onClick={onClose}
       role="button"
       tabIndex={0}
