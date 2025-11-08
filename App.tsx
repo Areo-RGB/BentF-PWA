@@ -3,6 +3,7 @@ import LevelSelection from './components/LevelSelection';
 import GameScreen from './components/GameScreen';
 import LevelComplete from './components/LevelComplete';
 import { Level, GameState } from './types';
+import ProOnlyScreen from './components/ProOnlyScreen';
 
 // The type for BeforeInstallPromptEvent is not standard in TS yet, so we define a basic interface for it.
 interface BeforeInstallPromptEvent extends Event {
@@ -56,6 +57,10 @@ const App: React.FC = () => {
     setSelectedLevel(level);
     setGameState('playing');
   }, []);
+  
+  const handleSelectProLevel = useCallback(() => {
+    setGameState('pro_only');
+  }, []);
 
   const handleLevelComplete = useCallback(() => {
     setGameState('complete');
@@ -69,7 +74,7 @@ const App: React.FC = () => {
   const renderContent = () => {
     switch (gameState) {
       case 'menu':
-        return <LevelSelection onSelectLevel={handleSelectLevel} />;
+        return <LevelSelection onSelectLevel={handleSelectLevel} onSelectProLevel={handleSelectProLevel} />;
       case 'playing':
         if (selectedLevel) {
           return <GameScreen level={selectedLevel} onComplete={handleLevelComplete} onRestart={handleRestart} />;
@@ -84,8 +89,10 @@ const App: React.FC = () => {
         // Fallback to menu if level is somehow null
         handleRestart();
         return null;
+      case 'pro_only':
+        return <ProOnlyScreen onClose={handleRestart} />;
       default:
-        return <LevelSelection onSelectLevel={handleSelectLevel} />;
+        return <LevelSelection onSelectLevel={handleSelectLevel} onSelectProLevel={handleSelectProLevel} />;
     }
   };
 

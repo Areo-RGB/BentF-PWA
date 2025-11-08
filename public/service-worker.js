@@ -4,6 +4,7 @@ const urlsToCache = [
   '/index.html',
   'https://video-idea.fra1.cdn.digitaloceanspaces.com/sounds/victory-96688.mp3',
   'https://video-idea.fra1.cdn.digitaloceanspaces.com/sounds/beep-short.mp3',
+  'https://video-idea.fra1.cdn.digitaloceanspaces.com/sounds/pro-only.gif',
   '/assets/icons/icon-192x192.png',
   '/assets/icons/icon-512x512.png',
   'https://cdn.tailwindcss.com'

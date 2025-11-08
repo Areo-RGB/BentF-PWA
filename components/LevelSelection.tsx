@@ -4,9 +4,10 @@ import { LEVELS } from '../constants';
 
 interface LevelSelectionProps {
   onSelectLevel: (level: Level) => void;
+  onSelectProLevel: () => void;
 }
 
-const LevelSelection: React.FC<LevelSelectionProps> = ({ onSelectLevel }) => {
+const LevelSelection: React.FC<LevelSelectionProps> = ({ onSelectLevel, onSelectProLevel }) => {
   return (
     <div className="flex flex-col h-screen w-screen bg-black">
       {LEVELS.map((level, index) => (
@@ -22,14 +23,17 @@ const LevelSelection: React.FC<LevelSelectionProps> = ({ onSelectLevel }) => {
           {level.name}
         </button>
       ))}
-      <div className="flex-1 flex flex-col items-center justify-center bg-gray-700 text-gray-500 cursor-not-allowed">
-        <span className="text-4xl md:text-6xl font-bold uppercase tracking-widest line-through">
+      <button
+        onClick={onSelectProLevel}
+        className="flex-1 flex flex-col items-center justify-center bg-gray-900 text-gray-400 hover:bg-gray-800 hover:text-white transition-all duration-300"
+      >
+        <span className="text-4xl md:text-6xl font-bold uppercase tracking-widest">
           Level 4
         </span>
-        <span className="text-lg text-gray-400 opacity-75 mt-2">
-          gesperrt
+        <span className="text-lg opacity-75 mt-2">
+          (Zugang verweigert)
         </span>
-      </div>
+      </button>
     </div>
   );
 };

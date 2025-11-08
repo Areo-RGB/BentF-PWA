@@ -7,4 +7,4 @@ export interface Level {
   soundOnSwitch: boolean;
 }
 
-export type GameState = 'menu' | 'countdown' | 'playing' | 'complete';
+export type GameState = 'menu' | 'countdown' | 'playing' | 'complete' | 'pro_only';
