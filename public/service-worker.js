@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bentf-v1';
+const CACHE_NAME = 'bentf-v2';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -11,6 +11,18 @@ const urlsToCache = [
   '/assets/icons/android/android-launchericon-96-96.png',
   '/assets/icons/android/android-launchericon-72-72.png',
   '/assets/icons/android/android-launchericon-48-48.png',
+  '/assets/icons/ios/1024.png',
+  '/assets/icons/ios/512.png',
+  '/assets/icons/ios/256.png',
+  '/assets/icons/ios/192.png',
+  '/assets/icons/ios/180.png',
+  '/assets/icons/ios/167.png',
+  '/assets/icons/ios/152.png',
+  '/assets/icons/ios/144.png',
+  '/assets/icons/ios/128.png',
+  '/assets/icons/ios/120.png',
+  '/assets/icons/ios/114.png',
+  '/assets/icons/ios/100.png',
   'https://cdn.tailwindcss.com'
 ];
 

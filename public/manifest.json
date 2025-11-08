@@ -3,15 +3,21 @@
   "name": "BentF",
   "icons": [
     {
-      "src": "/assets/icons/android/android-launchericon-192-192.png",
-      "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any maskable"
-    },
-    {
       "src": "/assets/icons/android/android-launchericon-512-512.png",
       "type": "image/png",
       "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/ios/1024.png",
+      "type": "image/png",
+      "sizes": "1024x1024",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/android/android-launchericon-192-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
       "purpose": "any maskable"
     },
     {
@@ -36,6 +42,18 @@
       "src": "/assets/icons/android/android-launchericon-48-48.png",
       "type": "image/png",
       "sizes": "48x48",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/ios/256.png",
+      "type": "image/png",
+      "sizes": "256x256",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/ios/128.png",
+      "type": "image/png",
+      "sizes": "128x128",
       "purpose": "any maskable"
     }
   ],
