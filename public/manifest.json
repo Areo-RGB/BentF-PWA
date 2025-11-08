@@ -3,46 +3,21 @@
   "name": "BentF",
   "icons": [
     {
-      "src": "/assets/icons/android/android-launchericon-192-192.png",
+      "src": "/assets/icons/icon-192x192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any maskable"
     },
     {
-      "src": "/assets/icons/android/android-launchericon-512-512.png",
+      "src": "/assets/icons/icon-512x512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"
-    },
-    {
-      "src": "/assets/icons/ios/180.png",
-      "type": "image/png",
-      "sizes": "180x180"
-    },
-    {
-      "src": "/assets/icons/ios/167.png",
-      "type": "image/png",
-      "sizes": "167x167"
-    },
-    {
-      "src": "/assets/icons/ios/152.png",
-      "type": "image/png",
-      "sizes": "152x152"
-    },
-    {
-      "src": "/assets/icons/ios/120.png",
-      "type": "image/png",
-      "sizes": "120x120"
     }
   ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
-  "orientation": "portrait",
-  "scope": "/",
-  "description": "A Progressive Web App version of the BentF game",
-  "lang": "en",
-  "dir": "ltr",
-  "categories": ["games", "entertainment"]
+  "orientation": "portrait"
 }
