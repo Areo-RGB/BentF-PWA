@@ -1,5 +1,5 @@
 {
-  "name": "Color Sequence PWA",
-  "description": "A simple Progressive Web App designed as a color sequence game with different levels. It's fully offline-capable and optimized for mobile devices, featuring sounds and animations upon level completion.",
+  "name": "BentF",
+  "description": "BentF is a simple Progressive Web App designed as a color sequence game with different levels. It's fully offline-capable and optimized for mobile devices, featuring sounds and animations upon level completion.",
   "requestFramePermissions": []
 }

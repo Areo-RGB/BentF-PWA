@@ -1,7 +1,6 @@
-
 {
-  "short_name": "ColorSeq",
-  "name": "Color Sequence PWA",
+  "short_name": "BentF",
+  "name": "BentF",
   "icons": [
     {
       "src": "/assets/icons/icon-192x192.png",

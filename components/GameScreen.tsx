@@ -73,15 +73,21 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onComplete, onRestart })
   return (
     <div className="h-screen w-screen relative">
       {countdown > 0 ? (
-        <div className="h-full w-full flex items-center justify-center bg-black text-white text-9xl font-bold">
-          {countdown}
+        <div className="h-full w-full flex flex-col items-center justify-center bg-black text-white p-4">
+          <div className="text-9xl font-bold">
+            {countdown}
+          </div>
+          <div className="text-2xl md:text-3xl text-gray-300 mt-4 text-center">
+            {`${level.changes} Farbwechsel ${level.soundOnSwitch ? 'mit' : 'ohne'} Ton. Jede Farbe für ${level.duration / 1000} Sekunden.`}
+          </div>
         </div>
       ) : (
         <>
           <div className={`h-full w-full transition-colors duration-500 ${currentColor}`}></div>
           {currentColor && (
             <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white mix-blend-difference z-10 pointer-events-none"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white z-10 pointer-events-none"
+              style={{ textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000' }}
               aria-live="polite"
               aria-label={`Step ${changesMade} of ${level.changes}`}
             >
