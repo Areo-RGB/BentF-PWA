@@ -1,12 +1,16 @@
-const CACHE_NAME = 'color-sequence-v3';
+const CACHE_NAME = 'bentf-v1';
 const urlsToCache = [
   '/',
   '/index.html',
   'https://video-idea.fra1.cdn.digitaloceanspaces.com/sounds/victory-96688.mp3',
   'https://video-idea.fra1.cdn.digitaloceanspaces.com/sounds/beep-short.mp3',
   'https://video-idea.fra1.cdn.digitaloceanspaces.com/sounds/pro-only.gif',
-  '/assets/icons/icon-192x192.png',
-  '/assets/icons/icon-512x512.png',
+  '/assets/icons/android/android-launchericon-192-192.png',
+  '/assets/icons/android/android-launchericon-512-512.png',
+  '/assets/icons/android/android-launchericon-144-144.png',
+  '/assets/icons/android/android-launchericon-96-96.png',
+  '/assets/icons/android/android-launchericon-72-72.png',
+  '/assets/icons/android/android-launchericon-48-48.png',
   'https://cdn.tailwindcss.com'
 ];
 
