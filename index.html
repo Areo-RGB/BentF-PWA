@@ -16,22 +16,47 @@
   <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/ios/152.png">
   <link rel="apple-touch-icon" sizes="167x167" href="/assets/icons/ios/167.png">
   <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/ios/120.png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0"
-  }
-}
-</script>
-</head>
-
-<body class="bg-black antialiased">
-  <div id="root"></div>
+  <link href="/index.css" rel="stylesheet">
   <script type="module" src="/index.tsx"></script>
   <script>
+    // PWA Install Prompt
+    let deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      console.log('Install prompt ready');
+    });
+
+    // PWA Install Button (if you want to add a custom button)
+    const installButton = document.createElement('button');
+    installButton.textContent = 'Install App';
+    installButton.style.position = 'fixed';
+    installButton.style.bottom = '20px';
+    installButton.style.right = '20px';
+    installButton.style.padding = '10px';
+    installButton.style.backgroundColor = '#000000';
+    installButton.style.color = '#ffffff';
+    installButton.style.border = 'none';
+    installButton.style.borderRadius = '5px';
+    installButton.style.cursor = 'pointer';
+    installButton.style.zIndex = '1000';
+
+    installButton.addEventListener('click', async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the install prompt');
+          }
+        });
+        deferredPrompt = null;
+      }
+    });
+
+    document.body.appendChild(installButton);
+
+    // Service Worker Registration
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js').then(registration => {
@@ -42,6 +67,6 @@
       });
     }
   </script>
-</body>
+  </body>
 
 </html>
