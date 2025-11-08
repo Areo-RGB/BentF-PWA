@@ -5,6 +5,7 @@ const urlsToCache = [
   'https://video-idea.fra1.cdn.digitaloceanspaces.com/sounds/victory-96688.mp3',
   'https://video-idea.fra1.cdn.digitaloceanspaces.com/sounds/beep-short.mp3',
   'https://video-idea.fra1.cdn.digitaloceanspaces.com/sounds/pro-only.gif',
+  '/favicon.png',
   '/assets/icons/android/android-launchericon-192-192.png',
   '/assets/icons/android/android-launchericon-512-512.png',
   '/assets/icons/ios/180.png',
