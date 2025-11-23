@@ -15,11 +15,12 @@ interface BeforeInstallPromptEvent extends Event {
   prompt(): Promise<void>;
 }
 
-
 const App: React.FC = () => {
   const [gameState, setGameState] = useState<GameState>('menu');
   const [selectedLevel, setSelectedLevel] = useState<Level | null>(null);
   const [installPromptEvent, setInstallPromptEvent] = useState<BeforeInstallPromptEvent | null>(null);
+
+  const [activeTab, setActiveTab] = useState<'fussball' | 'game'>('fussball');
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (e: Event) => {
@@ -57,7 +58,7 @@ const App: React.FC = () => {
     setSelectedLevel(level);
     setGameState('playing');
   }, []);
-  
+
   const handleSelectProLevel = useCallback(() => {
     setGameState('pro_only');
   }, []);
@@ -80,7 +81,7 @@ const App: React.FC = () => {
           return <GameScreen level={selectedLevel} onComplete={handleLevelComplete} onRestart={handleRestart} />;
         }
         // Fallback to menu if level is somehow null
-        handleRestart(); 
+        handleRestart();
         return null;
       case 'complete':
         if (selectedLevel) {
@@ -97,20 +98,57 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="h-screen w-screen overflow-hidden">
-      {renderContent()}
-      {installPromptEvent && gameState === 'menu' && (
+    <div className="h-screen w-screen overflow-hidden flex flex-col bg-gray-900 text-white">
+      {/* Tab Navigation */}
+      <div className="flex border-b border-gray-700 bg-gray-800">
         <button
-          onClick={handleInstallClick}
-          className="absolute top-4 right-4 z-50 flex items-center px-4 py-2 bg-purple-600 text-white font-bold rounded-lg shadow-lg hover:bg-purple-700 transition-all transform hover:scale-105"
-          aria-label="App installieren"
+          className={`flex-1 py-3 text-center font-bold transition-colors ${activeTab === 'fussball'
+            ? 'bg-blue-600 text-white'
+            : 'text-gray-400 hover:bg-gray-700 hover:text-white'
+            }`}
+          onClick={() => setActiveTab('fussball')}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-          </svg>
-          Installieren
+          Tabelle
         </button>
-      )}
+        <button
+          className={`flex-1 py-3 text-center font-bold transition-colors ${activeTab === 'game'
+            ? 'bg-blue-600 text-white'
+            : 'text-gray-400 hover:bg-gray-700 hover:text-white'
+            }`}
+          onClick={() => setActiveTab('game')}
+        >
+          Jonglieren
+        </button>
+      </div>
+
+      {/* Tab Content */}
+      <div className="flex-1 relative overflow-hidden">
+        {activeTab === 'fussball' && (
+          <iframe
+            src="https://next.fussball.de/mannschaft/-/011MID5CK8000000VTVG0001VTR8C1K7"
+            className="w-full h-full border-0"
+            title="Fussball Tabelle"
+          />
+        )}
+
+        {activeTab === 'game' && (
+          <div className="w-full h-full relative">
+            {renderContent()}
+            {installPromptEvent && gameState === 'menu' && (
+              <button
+                onClick={handleInstallClick}
+                className="absolute top-4 right-4 z-50 flex items-center px-4 py-2 bg-purple-600 text-white font-bold rounded-lg shadow-lg hover:bg-purple-700 transition-all transform hover:scale-105"
+                aria-label="App installieren"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Installieren
+              </button>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
