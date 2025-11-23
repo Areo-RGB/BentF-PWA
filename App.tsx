@@ -108,7 +108,7 @@ const App: React.FC = () => {
             }`}
           onClick={() => setActiveTab('fussball')}
         >
-          Tabelle
+          II-D-Junioren
         </button>
         <button
           className={`flex-1 py-3 text-center font-bold transition-colors ${activeTab === 'game'
@@ -127,7 +127,7 @@ const App: React.FC = () => {
           <iframe
             src="https://next.fussball.de/mannschaft/-/011MID5CK8000000VTVG0001VTR8C1K7"
             className="w-full h-full border-0"
-            title="Fussball Tabelle"
+            title="II-D-Junioren Tabelle"
           />
         )}
 
